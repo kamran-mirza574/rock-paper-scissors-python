@@ -1,0 +1,49 @@
+import random
+
+print("***************************************************************************************")
+print("                      Welcome to Rock, Paper, Scissors!                                ")
+print("***************************************************************************************")
+y = int(input("How many rounds would you like to be the winning score?"))
+hwin = 0
+cwin = 0
+while True:
+    l = int(input("Enter your choice(0: Rock 1: Scissors 2: Paper)"))
+
+    x = random.randint(0,2)
+    print(f"Computers choice:{x}")
+    if x == 1 and l == 1:
+        print("Tie!")
+    elif x == 1 and l == 2:
+        print("Computer wins!")
+        cwin +=1
+    elif x == 1 and l == 0:
+        print("You win!")
+        hwin+=1
+    elif x == 2 and l == 1:
+        print("You win!")
+        hwin+=1
+    elif x == 2 and l == 2:
+        print("Tie!")
+    elif x == 2 and l == 0:
+        print("Computer wins!")
+        cwin +=1
+    elif x == 0 and l == 0:
+        print("Tie!")
+    elif x == 0 and l == 1:
+        print("Computer wins!")
+        cwin+=1
+    elif x == 0 and l == 2:
+        print("You win!")
+        hwin+=1
+    if cwin == y:
+        print("The computer won the game!")
+        print(f"Your score: {hwin}")
+        print(f"Computers score: {cwin}")
+        break
+    elif hwin == y:
+        print("You won the game!")
+        print(f"Your score: {hwin}")
+        print(f"Computers score: {cwin}")
+        break
+    elif l <0 or l >2:
+        print("Invalid input")
